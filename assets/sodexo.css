@@ -12,6 +12,7 @@
     box-shadow: #d2d1d1 0px 6px 8px 4px;
     font-family: SansaSemiBold;
 }
+ 
 .font-weight-bold, b {
     font-family: Sansa-Bold;
 }
@@ -20,6 +21,9 @@
     font-family: Sansa; 
 } 
 
+html {
+    background: #f8f8f8;
+}
 @font-face {
     font-family: Sansa-Bold;
     src: url(fonts/Sansa-Bold.otf);
@@ -42,7 +46,7 @@
     background-color: #252f7a !important;
 }
 
-.box-cards-sodexo {
+.box-cards-sodexo { 
     background-color: #fefefef5;
     border-radius: 10px;
     padding: 13px;
@@ -58,4 +62,37 @@
 .food_pass_content {
     width: 100%; 
     object-fit: contain;
+}
+ 
+	/* flip the pane when hovered */
+	.flip-container.letFlip {
+		transform: rotateY(180deg);
+	}
+ 
+
+/* flip speed goes here */
+.flip-container {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
 }
