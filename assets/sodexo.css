@@ -12,7 +12,52 @@
     box-shadow: #d2d1d1 0px 6px 8px 4px;
     font-family: SansaSemiBold;
 }
- 
+.clickFlipCancel {
+    background-color: #999999;
+    color: white;
+    border-radius: 35px;
+    padding: 4px 7px 4px 7px;
+    font-size: 10px !important;
+    cursor: pointer;
+    font-weight: bold;
+    float: right;
+    margin-top: -3px;
+    margin-right: -5px;
+  }
+  .box-cards-init-division {
+    border-bottom: #dddcdc 2px solid;
+    box-shadow: 0px 16px 0px -2px whitesmoke;
+    height: 40px;
+    margin-top: -50px;
+    margin-bottom: 3px;
+    margin-left: -14px;
+    margin-right: -14px;
+    border-radius: 14px;
+    z-index: 31;
+}
+
+  .form-control {
+    box-shadow: #d2d1d1 0px 5px 14px 2px;
+    border-radius: 6px;
+    border: none;
+    margin-bottom: 7px;
+    font-size: 13px;
+    margin-top: 8px;
+  }
+
+.box-cards-inside {
+    background: whitesmoke;
+    padding: 16px;
+    z-index: -23;
+    margin: -14px;
+    margin-top: -3px;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+}
+
+.font-weight-semi-bold {
+    font-family: SansaSemiBold;
+}
 .font-weight-bold, b {
     font-family: Sansa-Bold;
 }
@@ -83,6 +128,7 @@ html {
 	position: absolute;
 	top: 0;
 	left: 0;
+    right: 0;
 }
 
 /* front pane, placed above back */

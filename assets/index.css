@@ -17,3 +17,10 @@ body {
   background-color: #f5f5f5;
 }
  
+.text-secondary {
+  color: #333333 !important;
+}
+
+.text-primary {
+  color: #252f7a !important;
+}
