@@ -11,11 +11,36 @@
     border-color: #273498;
     border: 0px;
     box-shadow: #d2d1d1 0px 6px 8px 4px;
-    font-family: url("fonts/Sansa-Bold.otf");
+    font-family: SansaSemiBold;
+}
+.font-weight-bold, b {
+    font-family: Sansa-Bold;
 }
 
+* {
+    font-family: Sansa; 
+} 
+
+@font-face {
+    font-family: Sansa-Bold;
+    src: url(fonts/Sansa-Bold.otf);
+  }
+
+
+  @font-face {
+    font-family: Sansa;
+    src: url(fonts/Sansa-Normal.otf);
+  }
+
+@font-face {
+    font-family: SansaSemiBold;
+    src: url(fonts/Sansa-SemiBold.otf);
+  }
+
+  
+
 .btn-default-sodexo {
-    background-color: #273498 !important;
+    background-color: #252f7a !important;
 }
 
 .box-cards-sodexo {
