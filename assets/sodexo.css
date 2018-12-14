@@ -1,3 +1,4 @@
+/* Button with shadow */
 .btn-default-sodexo {
     background-color: #273498;
     color: #fff;
@@ -22,4 +23,31 @@
     border-radius: 6px;
     padding: 6px;
     box-shadow: #d2d1d1 2px 10px 30px 2px;
+}
+
+/* Button without shadow */
+.btn-default-sodexo {
+    background-color: #273498;
+    color: #fff;
+    text-align: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-family: monospace;
+    font-size: 14px;
+    border-radius: 6px;
+    border-color: #273498;
+    border: 0px;
+    font-family: url("fonts/Sansa-Bold.otf");
+}
+
+.input-sodexo {
+    background-color: #FEFEFE;
+    width: 150px;
+    padding: 13px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #273498;
+    border-radius: 8px;
+    border: 0px;
+    box-shadow: 2px 10px 30px 2px #d2d1d1;
 }
