@@ -9,9 +9,10 @@
     border-radius: 6px;
     border-color: #273498;
     border: 0px;
-    box-shadow: #d2d1d1 0px 6px 8px 4px;
+    box-shadow: #d2d1d1 0px 4px 8px 0px;
     font-family: SansaSemiBold;
 }
+ 
 .clickFlipCancel {
     background-color: #999999;
     color: white;
@@ -49,7 +50,7 @@
     background: whitesmoke;
     padding: 16px;
     z-index: -23;
-    margin: -14px;
+    margin: -13px;
     margin-top: -3px;
     border-bottom-left-radius: 14px;
     border-bottom-right-radius: 14px;
@@ -85,11 +86,45 @@ html {
     src: url(fonts/Sansa-SemiBold.otf);
   }
 
+  .inputLabel {
+    color: #aeadc1;
+}
+
+  .form-google-theme {
+    box-shadow: none;
+    border-radius: 0;
+    padding-left: 0;
+    background: transparent;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #27349891;
+}
+
+.form-google-theme::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #2a295c8c;
+    opacity: 1; /* Firefox */
+  }
   
+  .form-google-theme:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #2a295c8c;
+  }
+  
+  .form-google-theme::-ms-input-placeholder { /* Microsoft Edge */
+    color: #2a295c8c;
+  }
 
 .btn-default-sodexo {
     background-color: #252f7a !important;
 }
+
+.BackGreen {
+    background-color: #30a330 !important;
+}
+
+.backgroundDisable {
+    background: #b7b7b7 !important;
+}
+
+
 
 .box-cards-sodexo { 
     background-color: #fefefef5;
@@ -141,4 +176,12 @@ html {
 /* back, initially hidden pane */
 .back {
 	transform: rotateY(180deg);
+}
+
+.btnReverseColor {
+    background-color: transparent !important;
+    border: 1px solid #9b9b9b;
+    box-shadow: none;
+    color: #9b9b9b;
+    font-family: Sansa;  
 }

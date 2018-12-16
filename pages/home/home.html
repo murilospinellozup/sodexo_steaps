@@ -21,10 +21,10 @@
                   <h5 class="text-secondary font-weight-semi-bold">Alimentação Pass <span class="clickFlipCancel">X</span></span></h5>
                   <br>
                   <h5 align="center" class="text-primary">Quantidade funcionários</h5>
-                  <input class="form-control text-primary font-weight-semi-bold" type="text" value="0" />
+                  <input id="FDCard_numberOfficers" class="form-control text-primary font-weight-semi-bold" type="number" value="0" />
                   <br>   
                   <h5 align="center" class="text-primary">Valor/mês por funcionário</h5>
-                  <input class="form-control text-primary font-weight-semi-bold" type="text" value="0,00" />
+                  <input id="FDCard_valuePerOfficers" class="form-control text-primary font-weight-semi-bold" type="text" value="0.00" />
 
                   <br>
                   <br>
@@ -47,10 +47,10 @@
                   <h5 class="text-secondary font-weight-semi-bold">Refeição Pass <span class="clickFlipCancel">X</span></span></h5>
                   <br>
                   <h5 align="center" class="text-primary">Quantidade funcionários</h5>
-                  <input class="form-control text-primary font-weight-semi-bold" type="text" value="0" />
+                  <input id="MEALCard_numberOfficers" class="form-control text-primary font-weight-semi-bold" type="number" value="0" />
                   <br>   
                   <h5 align="center" class="text-primary">Valor/mês por funcionário</h5>
-                  <input class="form-control text-primary font-weight-semi-bold" type="text" value="0,00" />
+                  <input id="MEALCard_valuePerOfficers" class="form-control text-primary font-weight-semi-bold" type="text" value="0.00" />
                   
                   <br>
                   <br>
@@ -65,12 +65,17 @@
 	 </div>
 	 <br>
 	 <br>
-	 
-   <!-- <div class="row" style="
-   position: absolute;
-   bottom: 0;
-   right: 0;
-">
+       
+       <div id="btnConfirmArea" style="
+       position: absolute;
+       BOTTOM: 0;
+       left: 0;
+       right: 0;display: none;
+       padding: 16px;
+   ">
+            <button class="col btn-default-sodexo BackGreen">Confirmar</button>
+       </div>
+   <div id="noValueArea" class="row" style="position: absolute;bottom: 7px;right: 7px;">
       <div class="col" align="right" style="
          height: 143px;
          padding: 0;
@@ -104,5 +109,5 @@
             /* position: absolute; */
             "> 
       </div>
-   </div> -->
+   </div>
 </div>
