@@ -145,10 +145,10 @@ html {
     object-fit: contain;
 }
  
-	/* flip the pane when hovered */
-	.flip-container.letFlip {
-		transform: rotateY(180deg);
-	}
+/* flip the pane when hovered */
+.flip-container.letFlip {
+    transform: rotateY(180deg);
+}
  
 
 /* flip speed goes here */

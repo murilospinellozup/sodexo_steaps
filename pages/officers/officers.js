@@ -1,10 +1,10 @@
 
-$(".required").keyup(function(){
+$(".form-control").keyup(function(){
     var allValuesSetted = true;
 
     $(".inputLabel").remove();
 
-    $(".required").each(function(){
+    $(".form-control").each(function(){
         if($(this).val() == ""){
             allValuesSetted = false 
 
