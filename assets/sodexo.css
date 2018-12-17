@@ -12,6 +12,7 @@
     box-shadow: #d2d1d1 0px 4px 8px 0px;
     font-family: SansaSemiBold;
 }
+
  
 .clickFlipCancel {
     background-color: #999999;
@@ -47,7 +48,7 @@
   }
 
 .box-cards-inside {
-    background: whitesmoke;
+    background: #f1f1f1;
     padding: 16px;
     z-index: -23;
     margin: -13px;

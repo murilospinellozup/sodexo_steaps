@@ -1,0 +1,1 @@
+$(".containerParent").addClass('white')

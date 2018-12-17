@@ -8,50 +8,9 @@ $(".clickFlipCancel").click(function(){
     $(this).closest(".flip-container").toggleClass("letFlip")
 })
 
-var mask = {
-    money: function() {
-        var el = this
-        ,exec = function(v) {
-        v = v.replace(/\D/g,"");
-        v = new String(Number(v));
-        var len = v.length;
-        if (1== len)
-        v = v.replace(/(\d)/,"0.0$1");
-        else if (2 == len)
-        v = v.replace(/(\d)/,"0.$1");
-        else if (len > 2) {
-        v = v.replace(/(\d{2})$/,'.$1');
-        }
-        return v;
-        };
-   
-        setTimeout(function(){
-        el.value = exec(el.value);
-        },1);
-    },
-    normal: function() {
-        var el = this
-        ,exec = function(v) {
-        v = v.replace(/\D/g,"");
-        v = new String(Number(v));
-        var len = v.length;
-        if (1== len)
-        v = v.replace(/(\d)/,"$1");
-        else if (len > 2) {
-        v = v.replace(/(\d{2})$/,'$1');
-        }
-        return v;
-        };
-   
-        setTimeout(function(){
-        el.value = exec(el.value);
-        },1);
-    }
-   } 
-
 $( "#FDCard_numberOfficers, #FDCard_valuePerOfficers, #MEALCard_numberOfficers, #MEALCard_numberOfficers, #MEALCard_valuePerOfficers" ).keyup(function() {
      
-    
+     
     let FDCard_numberOfficers = $("#FDCard_numberOfficers").val();
     let FDCard_valuePerOfficers = $("#FDCard_valuePerOfficers").val();
 
@@ -64,6 +23,9 @@ $( "#FDCard_numberOfficers, #FDCard_valuePerOfficers, #MEALCard_numberOfficers, 
     $('#MEALCard_numberOfficers').bind('keydown',mask.normal)
     $('#MEALCard_valuePerOfficers').bind('keydown',mask.money)
 
+    $("#lFDCard_valuePerOfficers").text(buildTextCurrent(parseInt(FDCard_numberOfficers) * parseFloat(FDCard_valuePerOfficers)));
+    $("#lMEALCard_numberOfficers").text(buildTextCurrent(parseInt(MEALCard_numberOfficers) * parseFloat(MEALCard_valuePerOfficers)));
+
     if((FDCard_numberOfficers != "0" && FDCard_numberOfficers != "" && FDCard_valuePerOfficers != "0.00") || (MEALCard_numberOfficers != "0" &&MEALCard_numberOfficers != "" && MEALCard_valuePerOfficers != "0.00")){
         $("#btnConfirmArea").show();
         $("#noValueArea").hide();
@@ -75,3 +37,7 @@ $( "#FDCard_numberOfficers, #FDCard_valuePerOfficers, #MEALCard_numberOfficers, 
   });
 
 
+
+$("#confirmInitial").click(function(){
+	setPage("register", darkTitle); 
+})

@@ -1,4 +1,4 @@
-<script src="./pages/home/home.js"></script>
+<script src="./pages/resume_order/resume_order.js"></script>
 <div class="container">
    <div class="row">
       <div class="col">
@@ -11,33 +11,39 @@
          <h5 align="center" class="text-primary font-weight-semi-bold">Alimentação Pass </h5>
          <br>
          <h4 align="center" class="text-secundary">Quantidade funcionários</h4>
-         <h2 align="center" class="text-primary font-weight-bold">0</h2>
+         <input id="FDCard_numberOfficers" class="form-control hide input_rules text-primary font-weight-semi-bold" type="number" value="0">
+         <h2 id="lFDCard_numberOfficers" align="center" class="text-primary input_label_rules font-weight-bold">0</h2>
          <br><br>   
          <h4 align="center" class="text-secundary">Valor/mês por funcionário</h4>
-         <h2 align="center" class="text-primary font-weight-bold">0</h2>
+         <input id="FDCard_valuePerOfficers" class="form-control hide input_rules text-primary font-weight-semi-bold" type="text" value="0.00" />
+         <h2 id="lFDCard_valuePerOfficers" align="center" class="text-primary input_label_rules font-weight-bold">0</h2>
          <br><br> 
          <div class="box-cards-inside" align="center">
-            <h3 align="center" class="text-primary font-weight-bold">0.000,00/mes</h3>
+            <h3 id="FDCard_numberXvalue" align="center" class="text-primary font-weight-bold">0.000,00/mes</h3>
          </div>
       </div>
       <div class="col box-cards-sodexo">
          <h5 align="center" class="text-primary font-weight-semi-bold">Alimentação Pass </h5>
          <br>
          <h4 align="center" class="text-secundary">Quantidade funcionários</h4>
-         <h2 align="center" class="text-primary font-weight-bold">0</h2>
+         <input id="MEALCard_numberOfficers" class="form-control hide input_rules text-primary font-weight-semi-bold" type="number" value="0" />
+         <h2 id="lMEALCard_numberOfficers" align="center" class="text-primary input_label_rules font-weight-bold">0</h2>
          <br><br>   
          <h4 align="center" class="text-secundary">Valor/mês por funcionário</h4>
-         <h2 align="center" class="text-primary font-weight-bold">0</h2>
+         <input id="MEALCard_valuePerOfficers" class="form-control hide input_rules text-primary font-weight-semi-bold" type="text" value="0.00" />
+         <h2 id="lMEALCard_valuePerOfficers" align="center" class="text-primary input_label_rules font-weight-bold">0</h2>
          <br><br> 
          <div class="box-cards-inside" align="center">
-            <h3 align="center" class="text-primary font-weight-bold">0.000,00/mes</h3>
+            <h3 id="MEALCard_numberXvalue" align="center" class="text-primary font-weight-bold">0.000,00/mes</h3>
          </div>
       </div>
    </div>
    <br>
-   <br>
+   <br> 
+
    <div class="row"> 
-      <button style=" width: 50%; margin: 0 auto; " class="btn-default-sodexo btnReverseColor">Alterar</button>
+      <button id="letmChangeValues" style=" width: 50%; margin: 0 auto; " class="btn-default-sodexo btnReverseColor">Alterar</button>
+      <button id="confirmChangeValues" style=" width: 50%; margin: 0 auto; " class="btn-default-sodexo hide">Confirmar</button>
    </div>
    <br>
    <br>
@@ -60,14 +66,14 @@
       <div class="col" style="
          display: inline-flex;
          ">
-         <input type="checkbox" style="width: 20px;height: 20px;margin-right: 14px;">
+         <input id="confirmterms" type="checkbox" style="width: 20px;height: 20px;margin-right: 14px;">
          <h5 class="text-secundary" style="
             color: #9b9b9b;
             align-self: center;
             padding: 0;
             margin: 0;
             margin-bottom: -3px;
-            ">  Aceito os Termos do Contrato.</h5>
+            ">  Aceito os <a target="_blank" href="https://app.zeplin.io/project/5c11589bddaf5a244376133c">Termos do Contrato.</a></h5>
       </div>
    </div>
    <br>
@@ -77,8 +83,8 @@
 				<h5 class="text-secundary">Inclui a taxa de emissão de R$ 5,00 por cartão e de taxa de entrega de R$ 10,00</h5>
 			 </div>
       <div class="col" style=" align-self: center; ">
-         <button class="col btn-default-sodexo BackGreen">Comprar</button>
+         <button id="finishBuy" disabled class="col btn-default-sodexo BackGreen backgroundDisable">Comprar</button>
       </div>
    </div>
    <br>
-</div>
+</div> 

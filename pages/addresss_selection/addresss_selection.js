@@ -15,11 +15,11 @@ $(".required").keyup(function(){
     })
 
     if(allValuesSetted)
-        enableItem($("#confirm_register"))
+        enableItem($("#confirm_address"))
     else 
-        disableItem($("#confirm_register"))
+        disableItem($("#confirm_address"))
 })
 
-$("#confirm_register").click(function(){
-	setPage("resume_order", darkTitle); 
+$("#confirm_address").click(function(){
+	setPage("officers_inserted", whiteTitle); 
 })

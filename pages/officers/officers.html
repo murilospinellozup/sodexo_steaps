@@ -1,9 +1,39 @@
+<script src="./pages/officers/officers.js"></script>
+
 <div class="container"> 
-		<div class="row">
-				<div class="col">
-					<h1 class=" text-white font-weight-bold">Vamos lá :)</h1>
-					<h4 class=" text-white">Selecione e configure seus benefícios:</h4>
-				</div>
+   <div class="row">
+		<div class="col">
+			<h1 class=" text-white font-weight-semi-bold">Funcionários :)</h1>
+			<h4 class=" text-white">Associe o CPF dos seus funcionários</h4>
 		</div>
-		<br>
+   </div>
+   <br> 
+
+   <div class="row">
+		<div class="col box-cards-sodexo">
+			<h4 class="text-secundary">Digite ou copie e cole os CPFs dos seus funcionários.</h4>
+			<h4 class="text-secundary">Ex: <span class="text-primary">123.456.789-11, 123.456.789-11</span></h4>
+			<br>
+			
+
+			<div id="document_officer_edtarea">
+				<input id="document_officers" placeholder="Escreva aqui" class="form-control text-primary form-google-theme required" type="text" value="" />  
+			</div>
+			<div id="documentsList">
+			</div>
+		</div>
+	</div> 
+	<br>
+	<br>
+	
+	<div class="row"> 
+		<button id="btnChangeDocumentOfficers"   style=" width: 50%; margin: 0 auto;" class="btn-default-sodexo btnReverseColor hide">Alterar</button>
+		<button id="btnSaveDocumentOfficers"   style=" width: 50%; margin: 0 auto;" class="btn-default-sodexo backgroundDisable">Salvar</button>
+	</div>
+	
+	<br><br>
+
+	<div class="row"> 
+	<button id="confirm_officers_document" class="col btn-default-sodexo BackGreen hide">Continuar</button>
+	</div>
 </div>

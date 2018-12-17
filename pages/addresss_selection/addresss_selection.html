@@ -1,9 +1,50 @@
-<div class="container"> 
-		<div class="row">
+<script src="./pages/addresss_selection/addresss_selection.js"></script>
+
+<div class="container">  
+
+   <div class="row">
+		<div class="col box-cards-sodexo">
+				<h2 class="text-primary font-weight-semi-bold">Podemos entregar os cartões nesse endereço?</h2>
+			<h4 class="text-secundary">Se quiser, você pode alterar.</h4>
+			<br>
+			<div class="row">
 				<div class="col">
-					<h1 class=" text-white font-weight-bold">Vamos lá :)</h1>
-					<h4 class=" text-white">Selecione e configure seus benefícios:</h4>
+					<input placeholder="Cep" class="form-control text-primary form-google-theme required" type="text" value="" /> 
 				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<input placeholder="Endereço" class="form-control text-primary form-google-theme required" type="text" value="" /> 
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-4">
+					<input placeholder="Número" class="form-control text-primary form-google-theme required" type="text" value="" />
+				</div>
+				<div class="col">
+					<input placeholder="Complemento" class="form-control text-primary form-google-theme" type="text" value="" /> 
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<input placeholder="Bairro" class="form-control text-primary form-google-theme required" type="text" value="" /> 
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-4">
+					<input placeholder="Estado" class="form-control text-primary form-google-theme required" type="text" value="" /> 
+				</div>
+				<div class="col">
+					<input placeholder="Cidade" class="form-control text-primary form-google-theme required" type="text" value="" /> 
+				</div>
+			</div>
 		</div>
-		<br>
+	</div>
+	<br>
+	<br>
+
+	<div class="row"> 
+		<button id="confirm_address" class="col btn-default-sodexo BackGreen backgroundDisable">Confirmar</button>
+	</div>
+	<br>
 </div>
