@@ -25,7 +25,7 @@ let whiteTitle = `
 
 // automatic steps
 $(document).ready(function () {
-	setPage("addresss_selection", darkTitle); 
+	setPage("home", darkTitle); 
 });
 
 
