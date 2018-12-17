@@ -25,11 +25,12 @@ $("#btnSaveDocumentOfficers, #btnChangeDocumentOfficers").click(function(){
     $("#btnChangeDocumentOfficers").toggleClass("hide")
     $("#document_officer_edtarea").toggleClass("hide")
     $("#confirm_officers_document").toggleClass("hide")
+    $("#documentsList").toggleClass("hide")
 })
  
 
 $("#document_officers").keyup(() =>{
-    let documents = $("#document_officers").val().trim().split(",")
+    let documents = $("#document_officers").val().trim().split("\n")
     $("#documentsList").html("")
 
     documents.forEach(element => {

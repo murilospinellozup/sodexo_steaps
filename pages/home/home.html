@@ -14,8 +14,10 @@
 "> 
       <div class="col flip-container" style="margin-right: 16px; ">
             <div class="box-cards-sodexo front">
-                  <img src="./assets/images/food_pass_header@3x.png" class="food_pass_header">
-                  <img src="./assets/images/card_food@3x.png" class="food_pass_content">
+                  <img src="./assets/images/food_pass_header.png" class="food_pass_header">
+                  <img src="./assets/images/card_food.png" class="food_pass_content">
+                  <br>
+                  <br>
                   <button class="col btn-default-sodexo clickFlip">Selecionar</button>
             </div>
 
@@ -33,7 +35,7 @@
                   <div class="box-cards-init-division">
                   </div>
                   <div class="box-cards-inside" align="center">
-                        <b id="lFDCard_valuePerOfficers" align="center" class="text-primary">0.000,00/mês</b>
+                        <h3 id="lFDCard_valuePerOfficers" align="center" class="text-primary font-weight-bold">0.000,00/mês</h3>
                   </div>
             </div>
       </div>
@@ -41,7 +43,9 @@
       <div class="col flip-container">
             <div class="box-cards-sodexo front" >
                <img src="./assets/images/food_pass2@3x.png" class="food_pass_header">
-               <img src="./assets/images/card_food2@3x.png" class="food_pass_content">
+               <img src="./assets/images/card_food2.png" class="food_pass_content">
+               <br>
+               <br>
                <button class="col btn-default-sodexo clickFlip">Selecionar</button>
             </div>
 
@@ -59,17 +63,15 @@
                   <div class="box-cards-init-division">
                   </div>
                   <div class="box-cards-inside" align="center">
-                        <b id="lMEALCard_numberOfficers" align="center" class="text-primary">0.000,00/mês</b>
+                        <h3 id="lMEALCard_numberOfficers" align="center" class="text-primary font-weight-bold">0.000,00/mês</h3>
                   </div>
             </div>
       </div>
  
 	 </div> 
-       
-       <div id="btnConfirmArea" style=" 
-       padding: 16px;display: none;
-   ">
-            <button id="confirmInitial" class="col btn-default-sodexo BackGreen">Confirmar</button>
+       <br>
+       <div style="padding: 16px;">
+            <button id="confirmInitial" disabled class="col btn-default-sodexo BackGreen backgroundDisable">Confirmar</button>
        </div>
    <div id="noValueArea" class="row hide" style="position: absolute;bottom: 7px;right: 7px;">
       <div class="col" align="right" style="

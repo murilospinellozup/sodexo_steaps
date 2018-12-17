@@ -27,11 +27,9 @@ $( "#FDCard_numberOfficers, #FDCard_valuePerOfficers, #MEALCard_numberOfficers, 
     $("#lMEALCard_numberOfficers").text(buildTextCurrent(parseInt(MEALCard_numberOfficers) * parseFloat(MEALCard_valuePerOfficers)));
 
     if((FDCard_numberOfficers != "0" && FDCard_numberOfficers != "" && FDCard_valuePerOfficers != "0.00") || (MEALCard_numberOfficers != "0" &&MEALCard_numberOfficers != "" && MEALCard_valuePerOfficers != "0.00")){
-        $("#btnConfirmArea").show();
-        $("#noValueArea").hide();
+        enableItem($("#confirmInitial"))
     } else {
-        $("#btnConfirmArea").hide();
-        $("#noValueArea").hide();
+        disableItem($("#confirmInitial"))
     }
  
   });

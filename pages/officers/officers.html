@@ -11,15 +11,17 @@
 
    <div class="row">
 		<div class="col box-cards-sodexo">
-			<h4 class="text-secundary">Digite ou copie e cole os CPFs dos seus funcionários.</h4>
-			<h4 class="text-secundary">Ex: <span class="text-primary">123.456.789-11, 123.456.789-11</span></h4>
+			<h4 class="text-secundary">Digite ou copie e cole os CPFs dos seus funcionários. Exemplo:</h4>
 			<br>
-			
-
+			<h4 class="text-primary">123.456.789-11</h4>
+			<h4 class="text-primary">345.456.789-20</h4>
+			<h4 class="text-primary">792.314.564-32</h4>
+			<br>
 			<div id="document_officer_edtarea">
-				<input id="document_officers" placeholder="Escreva aqui" class="form-control text-primary form-google-theme required" type="text" value="" />  
+				<textarea style="min-height: 90px;" id="document_officers" placeholder="Escreva aqui" class="form-control text-primary required" type="text" value=""></textarea>  
 			</div>
-			<div id="documentsList">
+			<br>
+			<div id="documentsList" class="hide">
 			</div>
 		</div>
 	</div> 
@@ -36,4 +38,5 @@
 	<div class="row"> 
 	<button id="confirm_officers_document" class="col btn-default-sodexo BackGreen hide">Continuar</button>
 	</div>
+	<br>
 </div>
