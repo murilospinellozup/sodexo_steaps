@@ -2,14 +2,27 @@ $("#FDCard_numberOfficers, #FDCard_valuePerOfficers, #MEALCard_numberOfficers, #
     validationFields()
 });
 
+
+$("#FDCard_numberOfficers").val(FDCard_numberOfficers);
+$("#FDCard_valuePerOfficers").val(FDCard_valuePerOfficers);
+$("#MEALCard_numberOfficers").val(MEALCard_numberOfficers);
+$("#MEALCard_valuePerOfficers").val(MEALCard_valuePerOfficers);
+
+$("#total_order").val(totalBuild())
+
+function totalBuild(){
+    return "Total R$ "+ buildTextCurrent((parseInt(MEALCard_numberOfficers) * parseFloat(MEALCard_valuePerOfficers)) + (parseInt(FDCard_numberOfficers) * parseFloat(FDCard_valuePerOfficers)))
+
+}
+
 function validationFields() {
     var allitsOk = true;
 
-    let FDCard_numberOfficers = $("#FDCard_numberOfficers").val();
-    let FDCard_valuePerOfficers = $("#FDCard_valuePerOfficers").val();
+    FDCard_numberOfficers = $("#FDCard_numberOfficers").val();
+    FDCard_valuePerOfficers = $("#FDCard_valuePerOfficers").val();
 
-    let MEALCard_numberOfficers = $("#MEALCard_numberOfficers").val();
-    let MEALCard_valuePerOfficers = $("#MEALCard_valuePerOfficers").val();
+    MEALCard_numberOfficers = $("#MEALCard_numberOfficers").val();
+    MEALCard_valuePerOfficers = $("#MEALCard_valuePerOfficers").val();
 
     $("#lFDCard_numberOfficers").text(FDCard_numberOfficers);
     $("#lFDCard_valuePerOfficers").text(FDCard_valuePerOfficers);
@@ -33,6 +46,7 @@ function validationFields() {
     $("#FDCard_numberXvalue").text(buildTextCurrent(parseInt(FDCard_numberOfficers) * parseFloat(FDCard_valuePerOfficers)));
     $("#MEALCard_numberXvalue").text(buildTextCurrent(parseInt(MEALCard_numberOfficers) * parseFloat(MEALCard_valuePerOfficers)));
 
+    $("#total_order").text(totalBuild())
 
     if (allitsOk == true && $("#confirmterms")[0].checked == true)
         enableItem($("#finishBuy"))

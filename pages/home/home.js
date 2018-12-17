@@ -11,11 +11,11 @@ $(".clickFlipCancel").click(function(){
 $( "#FDCard_numberOfficers, #FDCard_valuePerOfficers, #MEALCard_numberOfficers, #MEALCard_numberOfficers, #MEALCard_valuePerOfficers" ).keyup(function() {
      
      
-    let FDCard_numberOfficers = $("#FDCard_numberOfficers").val();
-    let FDCard_valuePerOfficers = $("#FDCard_valuePerOfficers").val();
+    FDCard_numberOfficers = $("#FDCard_numberOfficers").val();
+    FDCard_valuePerOfficers = $("#FDCard_valuePerOfficers").val();
 
-    let MEALCard_numberOfficers = $("#MEALCard_numberOfficers").val();
-    let MEALCard_valuePerOfficers = $("#MEALCard_valuePerOfficers").val();
+    MEALCard_numberOfficers = $("#MEALCard_numberOfficers").val();
+    MEALCard_valuePerOfficers = $("#MEALCard_valuePerOfficers").val();
 
     
     $('#FDCard_numberOfficers').bind('keydown',mask.normal)
@@ -31,7 +31,7 @@ $( "#FDCard_numberOfficers, #FDCard_valuePerOfficers, #MEALCard_numberOfficers, 
         $("#noValueArea").hide();
     } else {
         $("#btnConfirmArea").hide();
-        $("#noValueArea").show();
+        $("#noValueArea").hide();
     }
  
   });

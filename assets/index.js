@@ -5,6 +5,14 @@ let setPage = (name, themeTitle) =>{
     $("#themeTitle").html(themeTitle)
 }
 
+
+var FDCard_numberOfficers = ""
+var FDCard_valuePerOfficers = ""
+
+var MEALCard_numberOfficers = ""
+var MEALCard_valuePerOfficers = ""
+
+
 let darkTitle = `
 <div class="col" align="center">
    <img src="./assets/images/group-25.svg" class="Group-25">
@@ -23,6 +31,35 @@ $(document).ready(function () {
 
 function buildTextCurrent(floatValue) {
     return `${floatValue.toFixed(2)}/mês`;
+}
+
+function mask_documentUser(element){
+
+    var SPMaskBehavior = function (val) {
+        return val.replace(/\D/g, '').length > 11 ? '00.000.000/0000-00' : '000.000.000-009';
+      },
+      spOptions = {
+        onKeyPress: function(val, e, field, options) {
+            field.mask(SPMaskBehavior.apply({}, arguments), options);
+          }
+      };
+
+      element.mask(SPMaskBehavior, spOptions);
+}
+
+
+function mask_telephone(element){
+
+    var SPMaskBehavior = function (val) {
+        return val.replace(/\D/g, '').length === 11 ? '(00) 0.0000-0000' : '(00) 0000-00009';
+      },
+      spOptions = {
+        onKeyPress: function(val, e, field, options) {
+            field.mask(SPMaskBehavior.apply({}, arguments), options);
+          }
+      };
+
+      element.mask(SPMaskBehavior, spOptions);
 }
 
 var mask = {

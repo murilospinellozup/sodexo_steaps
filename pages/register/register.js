@@ -1,4 +1,10 @@
 
+ 
+  
+  mask_documentUser( $('#REG_document'))
+  mask_telephone($("#REG_phone"))
+
+
 $(".required").keyup(function(){
     var allValuesSetted = true;
 
