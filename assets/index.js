@@ -5,13 +5,31 @@ let setPage = (name, themeTitle) =>{
     $("#themeTitle").html(themeTitle)
 }
 
+// global vars to use inside of project (steps)
 
-var FDCard_numberOfficers = ""
-var FDCard_valuePerOfficers = ""
+var FDCard_numberOfficers = "0"
+var FDCard_valuePerOfficers = "0"
+var MEALCard_numberOfficers = "0"
+var MEALCard_valuePerOfficers = "0"
 
-var MEALCard_numberOfficers = ""
-var MEALCard_valuePerOfficers = ""
+var REG_name = ""
+var REG_email = ""
+var REG_document = ""
+var REG_phone = ""
 
+var bairro = ""
+var cep = ""
+var logradouro = ""
+var municipio = ""
+var numero = ""
+var uf = ""
+
+var documentList = []
+
+var barCode = ""
+var orderId = ""
+
+// theme titles with specific color or other style in top menu
 
 let darkTitle = `
 <div class="col" align="center">
@@ -107,12 +125,12 @@ function validCNPJ(cnpj) {
 }
 
 function validCPF(cpf) {	
-	cpf = cpf.replace(/[^\d]+/g,'');	
+	cpf = cpf.replace(/[^\d]+/g,'')
 	if(cpf == '') return false;	
 	// Elimina CPFs invalidos conhecidos	
 	if (cpf.length != 11 || 
 		cpf == "00000000000" || 
-		cpf == "11111111111" || 
+		// cpf == "11111111111" || 
 		cpf == "22222222222" || 
 		cpf == "33333333333" || 
 		cpf == "44444444444" || 

@@ -1,7 +1,9 @@
 
-function REST(url, method, headers, data, callback) {
+function REST(url, method, headers, data, callback, withLoading) {
 
 	console.log("url " + url);
+
+	if(withLoading)
 	progressBarShow();
 
 	$.ajax({
@@ -13,6 +15,7 @@ function REST(url, method, headers, data, callback) {
 	})
 
 		.done(function (msg) {
+			if(withLoading)
 			progressBarHide();
 			console.log("data", msg);
 			callback(msg);

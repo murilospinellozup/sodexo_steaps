@@ -77,5 +77,51 @@ $("#confirmChangeValues").click(function() {
 validationFields()
 
 $("#finishBuy").click(function(){
-	setPage("finish_order", whiteTitle); 
+    saveOrder(()=>{
+        setPage("finish_order", whiteTitle); 
+    })
 })
+
+function saveOrder(calback){
+
+    let url = `http://solitary-mountain-3623.getsandbox.com/order`
+    
+    FDCard_numberOfficers = $("#FDCard_numberOfficers").val();
+    FDCard_valuePerOfficers = $("#FDCard_valuePerOfficers").val();
+
+    MEALCard_numberOfficers = $("#MEALCard_numberOfficers").val();
+    MEALCard_valuePerOfficers = $("#MEALCard_valuePerOfficers").val();
+
+    REST(url,
+        "POST", { "Content-Type": "application/json" },
+        JSON.stringify(
+                {
+                    "cards": [
+                            {
+                                "type": "MEAL",
+                                "tot_func": FDCard_numberOfficers,
+                                "value": FDCard_valuePerOfficers,
+                                "total": parseInt(FDCard_numberOfficers) * parseFloat(FDCard_valuePerOfficers)
+                            },
+                            {
+                                "type": "FOOD",
+                                "tot_func": MEALCard_numberOfficers,
+                                "month_value": MEALCard_valuePerOfficers,
+                                "total": parseInt(MEALCard_numberOfficers) * parseFloat(MEALCard_valuePerOfficers)
+                            }
+                        ],
+                    "totalPrice": (parseInt(FDCard_numberOfficers) * parseFloat(FDCard_valuePerOfficers)) + (parseInt(MEALCard_numberOfficers) * parseFloat(MEALCard_valuePerOfficers))
+                }
+        ),
+    
+         (data) => {
+
+            if(data.barCode && data.orderId){
+                barCode = data.barCode
+                orderId = data.orderId
+                calback()
+            }
+
+         }, true);
+    
+    }

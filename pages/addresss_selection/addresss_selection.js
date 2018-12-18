@@ -1,7 +1,22 @@
 
-$("#addrs_cep").mask('00000-000');
+$("#addrs_cep").mask('00.000-000');
+
+$("#addrs_cep").val(cep)
+$("#addrs_address").val(logradouro)
+$("#addrs_number").val(numero) 
+$("#addrs_neighborhood").val(bairro)
+$("#addrs_state").val(uf)
+$("#addrs_city").val(municipio)
+
+pageRules()
 
 $(".form-control").keyup(function(){
+    
+    pageRules()
+
+})
+
+function pageRules(){
     var allValuesSetted = true;
 
     $(".inputLabel").remove();
@@ -11,7 +26,6 @@ $(".form-control").keyup(function(){
         if($(this).val() != ""){
             $(`<h5 class="inputLabel">${$(this).attr("placeholder")}</h5>`).insertBefore($(this));
         }
-
     })
 
 
@@ -31,9 +45,21 @@ $(".form-control").keyup(function(){
         enableItem($("#confirm_address"))
     else 
         disableItem($("#confirm_address"))
-})
+}
 
 $("#confirm_address").click(function(){
-	setPage("officers_inserted", whiteTitle); 
+    
+    let url = `http://solitary-mountain-3623.getsandbox.com/associateStaff`
+
+    REST(url,
+        "POST", { "Content-Type": "application/json" },
+        JSON.stringify(
+            {
+                "documentList": documentList
+            }
+        ),
+
+        (data) => setPage("officers_inserted", whiteTitle) , true);
+
 })
 $(".rulesinput").remove();

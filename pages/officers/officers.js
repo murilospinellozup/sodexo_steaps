@@ -20,24 +20,57 @@ $(".form-control").keyup(function(){
         disableItem($("#btnSaveDocumentOfficers"))
 })
 
-$("#btnSaveDocumentOfficers, #btnChangeDocumentOfficers").click(function(){
+$("#btnChangeDocumentOfficers").click(() => toggleArea() )
+
+$("#btnSaveDocumentOfficers").click(function(){
+    toggleArea()
+    saveOfficers()
+})
+
+
+function toggleArea(){
     $("#btnSaveDocumentOfficers").toggleClass("hide")
     $("#btnChangeDocumentOfficers").toggleClass("hide")
     $("#document_officer_edtarea").toggleClass("hide")
     $("#confirm_officers_document").toggleClass("hide")
     $("#documentsList").toggleClass("hide")
-})
+}
  
 
-$("#document_officers").keyup(() =>{
-    let documents = $("#document_officers").val().trim().split("\n")
+$("#document_officers").keyup(() => {
+ documentList = $("#document_officers").val().trim().split("\n")
     $("#documentsList").html("")
 
-    documents.forEach(element => {
-        $("#documentsList").append(`<h4 class="text-primary document_office_item">${element}</h4>`)
-    })
-})
+    documentList.forEach(element => $("#documentsList").append(`<h4 class="text-primary document_office_item">${element}</h4>`))
+}) 
+
+function staffsList(list){
+    $("#documentsList").html("");
+    
+    list.forEach(element => 
+        $("#documentsList").append(`<h4 class="text-primary document_office_item">${element.document}<br>${element.name} - ${element.birthdate}</h4><br>`)
+    )
+}
+
+function saveOfficers(){
+        
+    let url = `http://solitary-mountain-3623.getsandbox.com/associateStaff`
+
+    REST(url,
+        "POST", { "Content-Type": "application/json" },
+        JSON.stringify(
+            {
+                "documentList": documentList
+            }
+        ),
+
+        (data) => {
+            if(data.staffs)
+                staffsList(data.staffs)
+
+        }, true);
+}
 
 $("#confirm_officers_document").click(function(){
-	setPage("addresss_selection", darkTitle); 
+    setPage("addresss_selection", darkTitle);
 })
