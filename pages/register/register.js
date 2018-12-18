@@ -5,12 +5,12 @@
   mask_telephone($("#REG_phone"))
 
 
-$(".form-control").keyup(function(){
+$(".form-control").change(function(){
     checkFields()
 })
 
 
-$("#REG_document").keyup(function(){
+$("#REG_document").change(function(){
     if($("#REG_document").val().length == 14)
         getDocumentCPFtoCNPJ()
 

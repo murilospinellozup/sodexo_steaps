@@ -8,7 +8,7 @@ $(".clickFlipCancel").click(function(){
     $(this).closest(".flip-container").toggleClass("letFlip")
 })
 
-$( "#FDCard_numberOfficers, #FDCard_valuePerOfficers, #MEALCard_numberOfficers, #MEALCard_numberOfficers, #MEALCard_valuePerOfficers" ).keyup(function() {
+$( "#FDCard_numberOfficers, #FDCard_valuePerOfficers, #MEALCard_numberOfficers, #MEALCard_numberOfficers, #MEALCard_valuePerOfficers" ).change(function() {
      
      
     FDCard_numberOfficers = $("#FDCard_numberOfficers").val();

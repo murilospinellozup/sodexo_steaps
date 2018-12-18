@@ -1,5 +1,5 @@
 
-$(".form-control").keyup(function(){
+$(".form-control").change(function(){
     var allValuesSetted = true;
 
     $(".inputLabel").remove();
@@ -37,7 +37,7 @@ function toggleArea(){
 }
  
 
-$("#document_officers").keyup(() => {
+$("#document_officers").change(() => {
  documentList = $("#document_officers").val().trim().split("\n")
     $("#documentsList").html("")
 

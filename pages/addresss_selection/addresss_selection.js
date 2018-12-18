@@ -10,7 +10,7 @@ $("#addrs_city").val(municipio)
 
 pageRules()
 
-$(".form-control").keyup(function(){
+$(".form-control").change(function(){
     
     pageRules()
 
