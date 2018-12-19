@@ -1,7 +1,8 @@
+var numberOfficers = parseFloat(FDCard_numberOfficers) + parseFloat(MEALCard_numberOfficers)
 
 $(".form-control").keyup(function(){
-    var allValuesSetted = true;
 
+    var allValuesSetted = true;
     $(".inputLabel").remove();
 
     $(".form-control").each(function(){
@@ -38,15 +39,39 @@ function toggleArea(){
  
 
 $("#document_officers").keyup(() => {
+
+    var allValuesSetted = true;
+    $(".rulesinput").remove();
+    
  documentList = $("#document_officers").val().trim().split("\n")
     $("#documentsList").html("")
 
-    documentList.forEach(element => $("#documentsList").append(`<h4 class="text-primary document_office_item">${element}</h4>`))
+    if(documentList.length != numberOfficers){
+        allValuesSetted = false
+        $(`<h5 class="text-danger rulesinput">Informe ${numberOfficers} documentos válidos<br><br></h5>`).insertBefore($("#document_officers"));
+    }
+
+    documentList.forEach(element => {
+
+        if(!validCPF(element)){
+            allValuesSetted = false
+            $(`<h5 class="text-danger rulesinput">CPF "${element}" inválido</h5>`).insertBefore($("#document_officers"));
+        }
+
+        $("#documentsList").append(`<h4 class="text-primary document_office_item">${element}</h4>`)
+    })
+
+
+    if(allValuesSetted)
+        enableItem($("#btnSaveDocumentOfficers"))
+    else 
+        disableItem($("#btnSaveDocumentOfficers"))
 }) 
 
 function staffsList(list){
     $("#documentsList").html("");
     
+
     list.forEach(element => 
         $("#documentsList").append(`<h4 class="text-primary document_office_item">${element.document}<br>${element.name} - ${element.birthdate}</h4><br>`)
     )
