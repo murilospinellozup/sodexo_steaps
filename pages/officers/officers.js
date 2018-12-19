@@ -1,5 +1,5 @@
 
-$(".form-control").change(function(){
+$(".form-control").keyup(function(){
     var allValuesSetted = true;
 
     $(".inputLabel").remove();
@@ -37,7 +37,7 @@ function toggleArea(){
 }
  
 
-$("#document_officers").change(() => {
+$("#document_officers").keyup(() => {
  documentList = $("#document_officers").val().trim().split("\n")
     $("#documentsList").html("")
 
@@ -54,7 +54,7 @@ function staffsList(list){
 
 function saveOfficers(){
         
-    let url = `http://solitary-mountain-3623.getsandbox.com/associateStaff`
+    let url = `https://solitary-mountain-3623.getsandbox.com/associateStaff`
 
     REST(url,
         "POST", { "Content-Type": "application/json" },

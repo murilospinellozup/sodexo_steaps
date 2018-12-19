@@ -5,12 +5,12 @@
   mask_telephone($("#REG_phone"))
 
 
-$(".form-control").change(function(){
+$(".form-control").keyup(function(){
     checkFields()
 })
 
 
-$("#REG_document").change(function(){
+$("#REG_document").keyup(function(){
     if($("#REG_document").val().length == 14)
         getDocumentCPFtoCNPJ()
 
@@ -72,7 +72,7 @@ $("#confirm_register").click(function(){
 function saveUser(calback){
 
 let cpf = $("#REG_document").val().replace(/[^\d]+/g,'')
-let url = `http://solitary-mountain-3623.getsandbox.com/users`
+let url = `https://solitary-mountain-3623.getsandbox.com/users`
 
 REST(url,
     "POST", { "Content-Type": "application/json" },
@@ -93,7 +93,7 @@ function getDocumentCPFtoCNPJ(){
     // 11111111111
 
     let cpf = $("#REG_document").val().replace(/[^\d]+/g,'')
-    let url = `http://solitary-mountain-3623.getsandbox.com/getCnpjByCPF/${cpf}`
+    let url = `https://solitary-mountain-3623.getsandbox.com/getCnpjByCPF/${cpf}`
 
 	REST(url,
 		"GET", { "Content-Type": "application/json" },
@@ -112,7 +112,7 @@ function getDocumentCPFtoCNPJ(){
 function getAddressByCNPJ(cnpj){
     // 27865757000102
 
-    let url = `http://solitary-mountain-3623.getsandbox.com/getAddressByDocument/${cnpj}`
+    let url = `https://solitary-mountain-3623.getsandbox.com/getAddressByDocument/${cnpj}`
 
 	REST(url,
 		"GET", { "Content-Type": "application/json" },

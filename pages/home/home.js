@@ -7,21 +7,30 @@ $(".clickFlip").click(function(){
 $(".clickFlipCancel").click(function(){
     $(this).closest(".flip-container").toggleClass("letFlip")
 })
+ 
+    
 
-$( "#FDCard_numberOfficers, #FDCard_valuePerOfficers, #MEALCard_numberOfficers, #MEALCard_numberOfficers, #MEALCard_valuePerOfficers" ).change(function() {
-     
-     
+document.getElementById("FDCard_numberOfficers").addEventListener("keyup", execCalcForm);
+document.getElementById("FDCard_valuePerOfficers").addEventListener("keyup", execCalcForm);
+document.getElementById("MEALCard_numberOfficers").addEventListener("keyup", execCalcForm);
+document.getElementById("MEALCard_numberOfficers").addEventListener("keyup", execCalcForm);
+document.getElementById("MEALCard_valuePerOfficers").addEventListener("keyup", execCalcForm);
+
+
+function execCalcForm(){
+
+    moneyMask($('#FDCard_valuePerOfficers'));
+    moneyMask($('#MEALCard_valuePerOfficers'));
+
+    normalMask($('#FDCard_numberOfficers'));
+    normalMask($('#MEALCard_numberOfficers'));
+
     FDCard_numberOfficers = $("#FDCard_numberOfficers").val();
     FDCard_valuePerOfficers = $("#FDCard_valuePerOfficers").val();
 
     MEALCard_numberOfficers = $("#MEALCard_numberOfficers").val();
     MEALCard_valuePerOfficers = $("#MEALCard_valuePerOfficers").val();
 
-    
-    $('#FDCard_numberOfficers').bind('keydown',mask.normal)
-    $('#FDCard_valuePerOfficers').bind('keydown',mask.money)
-    $('#MEALCard_numberOfficers').bind('keydown',mask.normal)
-    $('#MEALCard_valuePerOfficers').bind('keydown',mask.money)
 
     $("#lFDCard_valuePerOfficers").text(buildTextCurrent(parseInt(FDCard_numberOfficers) * parseFloat(FDCard_valuePerOfficers)));
     $("#lMEALCard_numberOfficers").text(buildTextCurrent(parseInt(MEALCard_numberOfficers) * parseFloat(MEALCard_valuePerOfficers)));
@@ -31,9 +40,7 @@ $( "#FDCard_numberOfficers, #FDCard_valuePerOfficers, #MEALCard_numberOfficers, 
     } else {
         disableItem($("#confirmInitial"))
     }
- 
-  });
-
+}
 
 
 $("#confirmInitial").click(function(){

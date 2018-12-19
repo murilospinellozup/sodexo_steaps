@@ -1,4 +1,4 @@
-$("#FDCard_numberOfficers, #FDCard_valuePerOfficers, #MEALCard_numberOfficers, #MEALCard_numberOfficers, #MEALCard_valuePerOfficers").change(function() {
+$("#FDCard_numberOfficers, #FDCard_valuePerOfficers, #MEALCard_numberOfficers, #MEALCard_numberOfficers, #MEALCard_valuePerOfficers").keyup(function() {
     validationFields()
 });
 
@@ -30,11 +30,11 @@ function validationFields() {
     $("#lMEALCard_numberOfficers").text(MEALCard_numberOfficers);
     $("#lMEALCard_valuePerOfficers").text(MEALCard_valuePerOfficers);
 
+    moneyMask($('#FDCard_valuePerOfficers'));
+    moneyMask($('#MEALCard_valuePerOfficers'));
 
-    $('#FDCard_numberOfficers').bind('keydown', mask.normal)
-    $('#FDCard_valuePerOfficers').bind('keydown', mask.money)
-    $('#MEALCard_numberOfficers').bind('keydown', mask.normal)
-    $('#MEALCard_valuePerOfficers').bind('keydown', mask.money)
+    normalMask($('#FDCard_numberOfficers'));
+    normalMask($('#MEALCard_numberOfficers'));
 
     if ((FDCard_numberOfficers != "0" && FDCard_numberOfficers != "" && FDCard_valuePerOfficers != "0.00") || (MEALCard_numberOfficers != "0" && MEALCard_numberOfficers != "" && MEALCard_valuePerOfficers != "0.00"))
         enableItem($("#confirmChangeValues"))
@@ -84,7 +84,7 @@ $("#finishBuy").click(function(){
 
 function saveOrder(calback){
 
-    let url = `http://solitary-mountain-3623.getsandbox.com/order`
+    let url = `https://solitary-mountain-3623.getsandbox.com/order`
     
     FDCard_numberOfficers = $("#FDCard_numberOfficers").val();
     FDCard_valuePerOfficers = $("#FDCard_valuePerOfficers").val();

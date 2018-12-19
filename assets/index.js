@@ -176,11 +176,10 @@ function mask_telephone(element){
       element.mask(SPMaskBehavior, spOptions);
 }
 
-var mask = {
-    money: function() {
-        var el = this
-        ,exec = function(v) {
-        v = v.replace(/\D/g,"");
+
+     function moneyMask(input) {
+        
+        v = input.val().replace(/\D/g,"");
         v = new String(Number(v));
         var len = v.length;
         if (1== len)
@@ -190,17 +189,12 @@ var mask = {
         else if (len > 2) {
         v = v.replace(/(\d{2})$/,'.$1');
         }
-        return v;
-        };
-   
-        setTimeout(function(){
-        el.value = exec(el.value);
-        },1);
-    },
-    normal: function() {
-        var el = this
-        ,exec = function(v) {
-        v = v.replace(/\D/g,"");
+        input.val(v); 
+    }
+
+    function normalMask(input) {
+        
+        v = input.val().replace(/\D/g,"");
         v = new String(Number(v));
         var len = v.length;
         if (1== len)
@@ -208,13 +202,7 @@ var mask = {
         else if (len > 2) {
         v = v.replace(/(\d{2})$/,'$1');
         }
-        return v;
-        };
-   
-        setTimeout(function(){
-        el.value = exec(el.value);
-        },1);
-    }
+        input.val(v); 
    } 
 
    function disableItem(element){

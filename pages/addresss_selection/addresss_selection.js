@@ -10,7 +10,7 @@ $("#addrs_city").val(municipio)
 
 pageRules()
 
-$(".form-control").change(function(){
+$(".form-control").keyup(function(){
     
     pageRules()
 
@@ -49,7 +49,7 @@ function pageRules(){
 
 $("#confirm_address").click(function(){
     
-    let url = `http://solitary-mountain-3623.getsandbox.com/associateStaff`
+    let url = `https://solitary-mountain-3623.getsandbox.com/associateStaff`
 
     REST(url,
         "POST", { "Content-Type": "application/json" },

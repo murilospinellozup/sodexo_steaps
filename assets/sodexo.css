@@ -148,19 +148,33 @@ html {
 /* flip the pane when hovered */
 .flip-container.letFlip {
     transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
 }
  
 
 /* flip speed goes here */
 .flip-container {
 	transition: 0.6s;
-	transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+
 	position: relative;
 }
 
 /* hide back of pane during swap */
 .front, .back {
-	backface-visibility: hidden;
+    backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-tbackface-visibility: hidden;
+    -o-backface-visibility: hidden;
+
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -172,11 +186,19 @@ html {
 	z-index: 2;
 	/* for firefox 31 */
 	transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
 }
 
 /* back, initially hidden pane */
 .back {
 	transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
 }
 
 .btnReverseColor {
