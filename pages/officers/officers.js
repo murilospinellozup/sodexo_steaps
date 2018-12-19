@@ -48,7 +48,7 @@ $("#document_officers").keyup(() => {
 
     if(documentList.length != numberOfficers){
         allValuesSetted = false
-        $(`<h5 class="text-danger rulesinput">Informe ${numberOfficers} documentos válidos<br><br></h5>`).insertBefore($("#document_officers"));
+        $(`<h5 class="text-danger rulesinput">Informe ${numberOfficers} documento(s) válido(s)<br><br></h5>`).insertBefore($("#document_officers"));
     }
 
     documentList.forEach(element => {
