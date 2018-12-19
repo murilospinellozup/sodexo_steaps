@@ -8,7 +8,8 @@ $("#orderId").html(orderId)
 
 $("#copy").click(function(){
 	
-	Clipboard.copy(barCode);alert("Código copiado!")
+	Clipboard.copy(barCode);
+	alert("Código copiado!")
  
 }) 
 
