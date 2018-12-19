@@ -36,19 +36,7 @@ function toggleArea(){
     $("#confirm_officers_document").toggleClass("hide")
     $("#documentsList").toggleClass("hide")
 }
- 
-$('textarea').keypress(function(e) {
-    var a = [];
-    var k = e.which;
-    
-    for (i = 48; i < 58; i++)
-        a.push(i);
-    
-    if (!(a.indexOf(k)>=0))
-        e.preventDefault();
-    
-    $('span').text('KeyCode: '+k);
-});
+  
 
 $("#document_officers").keyup(() => {
 
