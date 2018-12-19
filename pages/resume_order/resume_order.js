@@ -11,7 +11,22 @@ $("#MEALCard_valuePerOfficers").val(MEALCard_valuePerOfficers);
 $("#total_order").val(totalBuild())
 
 function totalBuild(){
-    return "Total R$ "+ buildTextCurrent((parseInt(MEALCard_numberOfficers) * parseFloat(MEALCard_valuePerOfficers)) + (parseInt(FDCard_numberOfficers) * parseFloat(FDCard_valuePerOfficers)))
+    var fistRate = 0
+    var secondRate = 0
+    let deliveryFee = 10
+
+    var firstCard = 0
+    var secondCar = 0
+ 
+    if(parseFloat(MEALCard_numberOfficers) > 0 && parseFloat(MEALCard_valuePerOfficers) > 0)
+    firstCard = 5 + (parseInt(MEALCard_numberOfficers) * parseFloat(MEALCard_valuePerOfficers))
+
+    if(parseFloat(FDCard_numberOfficers) > 0 && parseFloat(FDCard_valuePerOfficers) > 0)
+    secondCar = 5 + (parseInt(FDCard_numberOfficers) * parseFloat(FDCard_valuePerOfficers))
+
+    return "Total R$ "+ buildTextCurrent(
+        deliveryFee + ( firstCard + secondCar )
+    )
 
 }
 

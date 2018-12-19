@@ -112,7 +112,7 @@ function getDocumentCPFtoCNPJ(){
 function getAddressByCNPJ(cnpj){
     // 27865757000102
 
-    let url = `https://solitary-mountain-3623.getsandbox.com/getAddressByDocument/${cnpj}`
+    let url = `https://solitary-mountain-3623.getsandbox.com/getAddressByDocument/${cnpj.replace(/[^\d]+/g,'')}`
 
 	REST(url,
 		"GET", { "Content-Type": "application/json" },
