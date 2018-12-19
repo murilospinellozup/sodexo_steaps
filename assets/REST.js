@@ -24,7 +24,7 @@ function REST(url, method, headers, data, callback, withLoading) {
 
 		.fail(function (jqXHR, textStatus) {
 			console.log(jqXHR);
-			showError("Erro na requisição!");
+			showError("Erro inesperado, tente novamente!");
 		});
 }
 
